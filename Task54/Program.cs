@@ -1,7 +1,7 @@
 ﻿//  Задайте двумерный массив. Напишите программу, 
 // которая упорядочит по убыванию элементы каждой строки двумерного массива.
 
-
+Console.Clear();
 int[,] CreateRandomArray(int rows, int columns, int min, int max)
 {
     int[,] newArray = new int[rows, columns];
@@ -62,27 +62,10 @@ int[,] SortArrayInstring(int[,] array)
                     array[a,j] = array[i,j];
                     array[i,j] = temp;
                 }
+                
             }
         }
     }
-    for(int i = 0; i < array.GetLength(0); i++)
-    { 
-        for( int j = 0; j < array.GetLength(1); j++)
-        {
-            for(b = array.GetLength(1)-1; b >=0 ; b--)
-            {    
-                for(a = 0; a < array.GetLength(0); a++)
-                {   if(array[a,j] > array[i,b])
-                    {
-                        int temp= array[i,b];
-                        array[i,b] = array[a,j];
-                        array[a,j] = temp;
-                    }
-                }
-            }
-        }
-    }
-    
     
     return array;   
 }
